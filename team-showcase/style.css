@@ -1,0 +1,470 @@
+
+/* ---------- General Styling ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #534780;
+    color: #211a35;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background-color: lch(95.94% 2.06 290.37);
+    border-bottom: 1px solid #050506;
+    animation: slideDown 0.7s ease both;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #7e63b9;
+}
+
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    font-size: 14px;
+    color: #5c566b;
+    transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+    color: #8055df;
+}
+
+/* ---------- Hero Section ---------- */
+
+.hero {
+    text-align: center;
+    padding: 100px 20px 90px;
+    background:
+        radial-gradient(
+            circle at top right,
+            #6e90b7,
+            transparent 40%
+        ),
+        linear-gradient(135deg, #c5c2cf, #cdc2ec);
+    animation: fadeUp 0.9s ease both;
+}
+
+.tagline {
+    color: #8055df;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #8055df;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #716b80;
+    font-size: 16px;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: #8055df;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px #8055df30;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #6740c2;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px #1c1a2045;
+}
+
+/* ---------- Team Section ---------- */
+
+.team-section {
+    padding: 85px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+    animation: fadeUp 0.9s ease both;
+}
+
+.section-heading h2,
+.contact-section h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child,
+.contact-section > p:not(.tagline) {
+    color: #0e0c10;
+}
+
+/* ---------- Responsive CSS Grid ---------- */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* ---------- Team Cards ---------- */
+
+.team-card {
+    background-color: #ffffff;
+    border: 1px solid #010101;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px #bc676708;
+
+    /* Entry animation */
+    opacity: 0;
+    animation: cardFadeIn 0.8s ease forwards;
+
+    /* Smooth 3D hover transition */
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    /* 3D positioning support */
+    transform-style: preserve-3d;
+}
+
+/* ---------- Staggered Entry Animations ---------- */
+
+.team-card:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.team-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.team-card:nth-child(3) {
+    animation-delay: 0.45s;
+}
+
+.team-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* ---------- 3D Hover Effect ---------- */
+
+.team-card:hover {
+    transform:
+        perspective(800px)
+        rotateX(8deg)
+        rotateY(-12deg)
+        translateY(-8px)
+        scale(1.03);
+
+    box-shadow: 15px 20px 35px #211a3540;
+    border-color: #d8c7ff;
+}
+
+/* ---------- Card Images ---------- */
+
+.image-container {
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+    background-color: #e9e2f6;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .image-container img {
+    transform: scale(1.08);
+}
+
+.member-number {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #ffffffdd;
+    color: #8055df;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* ---------- Card Content ---------- */
+
+.card-content {
+    padding: 22px;
+}
+
+.member-role {
+    color: #8055df;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.card-content h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.member-description {
+    color: #716b80;
+    font-size: 13px;
+    min-height: 63px;
+}
+
+.member-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    color: #8055df;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.member-link span {
+    transition: transform 0.3s ease;
+}
+
+.member-link:hover span {
+    transform: translateX(5px);
+}
+
+/* ---------- Contact Section ---------- */
+
+.contact-section {
+    text-align: center;
+    padding: 75px 20px;
+    background-color: #eee8fa;
+}
+
+.contact-section h2 {
+    margin-bottom: 15px;
+}
+
+.contact-section > p:not(.tagline) {
+    margin-bottom: 25px;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 8%;
+    background-color: #211a35;
+    color: #ffffff;
+}
+
+.footer .logo {
+    font-size: 21px;
+}
+
+.footer p {
+    font-size: 12px;
+    color: #c6bfd6;
+    text-align: right;
+}
+
+/* ---------- Keyframe Animations ---------- */
+
+/* Hero and section entry animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Team card animation: opacity only,
+   so it does not conflict with 3D hover */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Tablet Responsive Design ---------- */
+
+@media (max-width: 1100px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .image-container {
+        height: 280px;
+    }
+}
+
+/* ---------- Mobile Responsive Design ---------- */
+
+@media (max-width: 600px) {
+    .header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .header nav {
+        gap: 15px;
+    }
+
+    .header nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 75px 6% 65px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .team-section {
+        padding: 60px 6%;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .image-container {
+        height: 300px;
+    }
+
+    .card-content {
+        padding: 22px;
+    }
+
+    .member-description {
+        min-height: auto;
+    }
+
+    /* Softer 3D effect on small screens */
+    .team-card:hover {
+        transform:
+            perspective(800px)
+            rotateX(3deg)
+            rotateY(-4deg)
+            translateY(-5px)
+            scale(1.01);
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 5%;
+    }
+
+    .footer p {
+        text-align: center;
+    }
+}
+
+/* ---------- Accessibility: Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .team-card {
+        opacity: 1;
+    }
+}

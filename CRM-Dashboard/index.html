@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar Navigation -->
+       <aside class="sidebar" id="sidebar">
+            <div class="sidebar__brand">
+                <span class="sidebar__logo">C</span>
+                <h2>ConnectCRM</h2>
+            </div>
+
+            <p class="sidebar__label">MAIN MENU</p>
+
+            <nav class="sidebar__nav">
+                <a href="#" class="sidebar__link sidebar__link--active">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="#customers" class="sidebar__link">
+                    <span>♙</span> Customers
+                </a>
+                <a href="#deals" class="sidebar__link">
+                    <span>◇</span> Deals
+                </a>
+                <a href="#activities" class="sidebar__link">
+                    <span>◷</span> Activities
+                </a>
+                <a href="#reports" class="sidebar__link">
+                    <span>▤</span> Reports
+                </a>
+            </nav>
+
+            <div class="sidebar__bottom">
+                <p class="sidebar__label">PREFERENCES</p>
+                <a href="#" class="sidebar__link">
+                    <span>⚙</span> Settings
+                </a>
+                <a href="#" class="sidebar__link">
+                    <span>ⓘ</span> Help Center
+                </a>
+
+                <div class="sidebar__help">
+                    <span></span>
+                    <h3>Need assistance?</h3>
+                    <p>Our support team is here to help.</p>
+                    <a href="mailto:support@example.com">Contact Support</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard -->
+        <div class="dashboard__main">
+
+            <!-- Top Header -->
+            <header class="topbar">
+                <button
+    type="button"
+    id="menuButton"
+  class="btn btn-primary"
+    aria-controls="sidebar"
+    aria-expanded="false"
+>
+    Menu
+</button>
+                <div class="topbar__heading">
+                    <p class="topbar__breadcrumb">Workspace / Overview</p>
+                    <h1>Dashboard</h1>
+                </div>
+
+                <div class="topbar__actions">
+                    <label class="search">
+                        <span>⌕</span>
+                        <input type="search" placeholder="Search anything...">
+                    </label>
+
+                    <button class="topbar__notification" aria-label="Notifications">
+                        ♧
+                        <span class="topbar__dot"></span>
+                    </button>
+
+                    <div class="profile">
+                        <div class="profile__avatar">WA</div>
+                        <div class="profile__info">
+                            <strong>Waleeja Atif</strong>
+                            <span>Administrator</span>
+                        </div>
+                        <span class="profile__arrow">⌄</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="content">
+
+                <section class="welcome">
+                    <div>
+                        <h2>
+    <span id="greeting">Hello</span>, Waleeja! 👋
+</h2>
+                        <p>Here is what's happening with your business today.</p>
+                    </div>
+
+                    <button class="button button--primary"
+                        onclick="window.print()">
+                        ↓ Export Report
+                    </button>
+                </section>
+
+                <!-- Statistics Widgets -->
+                <section class="stats" aria-label="Business statistics">
+
+                    <article class="stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__icon stat-card__icon--purple">♙</span>
+                            <span class="stat-card__trend">↑ 12.8%</span>
+                        </div>
+                        <p class="stat-card__label">Total Customers</p>
+                        <h2>2,450</h2>
+                        <p class="stat-card__description">Compared to last month</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__icon stat-card__icon--blue">◇</span>
+                            <span class="stat-card__trend">↑ 8.2%</span>
+                        </div>
+                        <p class="stat-card__label">Total Revenue</p>
+                        <h2>$48,250</h2>
+                        <p class="stat-card__description">Compared to last month</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__icon stat-card__icon--orange">▤</span>
+                            <span class="stat-card__trend">↑ 5.4%</span>
+                        </div>
+                        <p class="stat-card__label">Active Deals</p>
+                        <h2>184</h2>
+                        <p class="stat-card__description">Compared to last month</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__icon stat-card__icon--green">✓</span>
+                            <span class="stat-card__trend stat-card__trend--neutral">On track</span>
+                        </div>
+                        <p class="stat-card__label">Tasks Completed</p>
+                        <h2>86%</h2>
+                        <p class="stat-card__description">Monthly completion rate</p>
+                    </article>
+
+                </section>
+
+                <!-- Overview Panels -->
+                <section class="overview" id="reports">
+
+                    <article class="panel revenue-panel">
+                        <div class="panel__header">
+                            <div>
+                                <h3>Revenue Overview</h3>
+                                <p>Your revenue performance this week</p>
+                            </div>
+                            <select aria-label="Revenue period">
+                                <option>This Week</option>
+                                <option>This Month</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+
+                        <div class="revenue">
+                            <div class="revenue__amount">$12,840</div>
+                            <span class="revenue__change">↑ 14.6% this week</span>
+                        </div>
+
+                        <div class="chart" role="img"
+                            aria-label="Illustrative revenue bar chart for Monday to Sunday">
+                            <div class="chart__item">
+                                <div class="chart__bar" style="--bar-height: 40%"></div>
+                                <span>Mon</span>
+                            </div>
+                            <div class="chart__item">
+                                <div class="chart__bar" style="--bar-height: 62%"></div>
+                                <span>Tue</span>
+                            </div>
+                            <div class="chart__item">
+                                <div class="chart__bar" style="--bar-height: 48%"></div>
+                                <span>Wed</span>
+                            </div>
+                            <div class="chart__item">
+                                <div class="chart__bar chart__bar--highlight"
+                                    style="--bar-height: 88%"></div>
+                                <span>Thu</span>
+                            </div>
+                            <div class="chart__item">
+                                <div class="chart__bar" style="--bar-height: 66%"></div>
+                                <span>Fri</span>
+                            </div>
+                            <div class="chart__item">
+                                <div class="chart__bar" style="--bar-height: 76%"></div>
+                                <span>Sat</span>
+                            </div>
+                            <div class="chart__item">
+                                <div class="chart__bar" style="--bar-height: 55%"></div>
+                                <span>Sun</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="panel tasks-panel">
+                        <div class="panel__header">
+                            <div>
+                                <h3>Today's Tasks</h3>
+                                <p>Keep up with your work</p>
+                            </div>
+                            <span class="task-count">3 tasks</span>
+                        </div>
+
+                        <div class="task-list">
+                            <label class="task">
+                                <input type="checkbox">
+                                <span class="task__text">
+                                    <strong>Follow up with clients</strong>
+                                    <small>09:30 AM · Sales</small>
+                                </span>
+                                <span class="task__priority task__priority--high">High</span>
+                            </label>
+
+                            <label class="task">
+                                <input type="checkbox">
+                                <span class="task__text">
+                                    <strong>Review new deals</strong>
+                                    <small>11:00 AM · Business</small>
+                                </span>
+                                <span class="task__priority task__priority--medium">Medium</span>
+                            </label>
+
+                            <label class="task">
+                                <input type="checkbox">
+                                <span class="task__text">
+                                    <strong>Prepare monthly report</strong>
+                                    <small>02:00 PM · Reports</small>
+                                </span>
+                                <span class="task__priority task__priority--low">Low</span>
+                            </label>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- Recent Activity Table -->
+                <section class="panel activity-panel" id="activities">
+                    <div class="panel__header activity-panel__header">
+                        <div>
+                            <h3>Recent Activity</h3>
+                            <p>Track your latest customer interactions</p>
+                        </div>
+
+                        <a href="#customers" class="activity-panel__link">
+                            View all →
+                        </a>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                          
+                               <thead>
+    <tr>
+        <th scope="col">Customer</th>
+        <th scope="col">Activity</th>
+        <th scope="col">Date</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Status</th>
+    </tr>
+</thead>
+                            
+
+                            <tbody id="customers">
+                                <tr>
+                                    <td>
+                                        <div class="customer">
+                                            <span class="customer__avatar customer__avatar--purple">AS</span>
+                                            <span>
+                                                <strong>Ali Shah</strong>
+                                                <small>ali@example.com</small>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>New deal created</td>
+                                    <td>Oct 18, 2026</td>
+                                    <td class="table__amount">$2,400</td>
+                                    <td><span class="status status--completed">Completed</span></td>
+                                </tr>
+
+                                <tr id="deals">
+                                    <td>
+                                        <div class="customer">
+                                            <span class="customer__avatar customer__avatar--blue">SK</span>
+                                            <span>
+                                                <strong>Sara Khan</strong>
+                                                <small>sara@example.com</small>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>Meeting scheduled</td>
+                                    <td>Oct 17, 2026</td>
+                                    <td class="table__amount">$1,850</td>
+                                    <td><span class="status status--pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="customer">
+                                            <span class="customer__avatar customer__avatar--orange">HM</span>
+                                            <span>
+                                                <strong>Hamza Malik</strong>
+                                                <small>hamza@example.com</small>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>Payment received</td>
+                                    <td>Oct 16, 2026</td>
+                                    <td class="table__amount">$3,200</td>
+                                    <td><span class="status status--completed">Completed</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="customer">
+                                            <span class="customer__avatar customer__avatar--green">ZF</span>
+                                            <span>
+                                                <strong>Zara Fatima</strong>
+                                                <small>zara@example.com</small>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>Proposal sent</td>
+                                    <td>Oct 15, 2026</td>
+                                    <td class="table__amount">$980</td>
+                                    <td><span class="status status--progress">In Progress</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <footer class="footer">
+                    <p>© 2026 ConnectCRM. All rights reserved.</p>
+                    <p>Made with care for your business.</p>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+    
+<script src="script.js" defer></script>
+</body>
+</html>

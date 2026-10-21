@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page">
+
+    <main class="lead-form">
+
+        <!-- Header -->
+        <header class="lead-form__header">
+            <h1 class="lead-form__title">Lead Management System</h1>
+        </header>
+
+        <div class="lead-form__divider"></div>
+
+        <!-- Main Form -->
+        <form class="lead-form__form" action="#" method="post">
+
+            <p class="lead-form__required-note">
+                <span class="lead-form__required-mark">*</span>
+                Required fields
+            </p>
+
+            <!-- Personal Information -->
+            <fieldset class="lead-form__section">
+                <legend class="lead-form__legend">
+                    <span class="lead-form__section-number">01</span>
+                    Personal Information
+                </legend>
+
+                <p class="lead-form__section-description">
+                    Basic contact details of your potential customer.
+                </p>
+
+                <div class="lead-form__grid">
+
+                    <div class="lead-form__group">
+                        <label class="lead-form__label" for="fullName">
+                            Full Name <span class="lead-form__required-mark">*</span>
+                        </label>
+                        <input class="lead-form__input" type="text" id="fullName"
+                            name="fullName" placeholder="e.g. Ali Khan"
+                            autocomplete="name" required>
+                    </div>
+
+                    <div class="lead-form__group">
+                        <label class="lead-form__label" for="email">
+                            Email Address <span class="lead-form__required-mark">*</span>
+                        </label>
+                        <input class="lead-form__input" type="email" id="email"
+                            name="email" placeholder="ali@example.com"
+                            autocomplete="email" required>
+                    </div>
+
+                    <div class="lead-form__group">
+                        <label class="lead-form__label" for="phone">
+                            Phone Number <span class="lead-form__required-mark">*</span>
+                        </label>
+                        <input class="lead-form__input" type="tel" id="phone"
+                            name="phone" placeholder="Enter phone number"
+                            autocomplete="tel" required>
+                    </div>
+
+                    <div class="lead-form__group">
+                        <label class="lead-form__label" for="company">
+                            Company Name <span class="lead-form__required-mark">*</span>
+                        </label>
+                        <input class="lead-form__input" type="text" id="company"
+                            name="company" placeholder="Enter company name"
+                            autocomplete="organization" required>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- Lead Information -->
+            <fieldset class="lead-form__section">
+                <legend class="lead-form__legend">
+                    <span class="lead-form__section-number">02</span>
+                    Lead Information
+                </legend>
+
+                <p class="lead-form__section-description">
+                    Track where the lead came from and its current status.
+                </p>
+
+                <div class="lead-form__grid">
+
+                    <div class="lead-form__group">
+                        <label class="lead-form__label" for="source">
+                            Lead Source <span class="lead-form__required-mark">*</span>
+                        </label>
+                        <select class="lead-form__input lead-form__input--select"
+                            id="source" name="source" required>
+                            <option value="">Choose a source</option>
+                            <option value="website">Website</option>
+                            <option value="social">Social Media</option>
+                            <option value="referral">Referral</option>
+                            <option value="advertisement">Advertisement</option>
+                        </select>
+                    </div>
+
+                    <div class="lead-form__group">
+                        <label class="lead-form__label" for="status">
+                            Lead Status <span class="lead-form__required-mark">*</span>
+                        </label>
+                        <select class="lead-form__input lead-form__input--select"
+                            id="status" name="status" required>
+                            <option value="">Choose a status</option>
+                            <option value="new">New</option>
+                            <option value="contacted">Contacted</option>
+                            <option value="qualified">Qualified</option>
+                            <option value="converted">Converted</option>
+                        </select>
+                    </div>
+
+                    <div class="lead-form__group lead-form__group--full">
+                        <label class="lead-form__label" for="notes">
+                            Additional Notes
+                            <span class="lead-form__optional">(Optional)</span>
+                        </label>
+                        <textarea class="lead-form__input lead-form__input--textarea"
+                            id="notes" name="notes" rows="4"
+                            placeholder="Add details, requirements or follow-up information..."></textarea>
+                        <p class="lead-form__help">
+                            Add any useful information about this lead.
+                        </p>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- Form Actions -->
+            <div class="lead-form__actions">
+                <button class="lead-form__button lead-form__button--reset"
+                    type="reset">
+                    Reset Form
+                </button>
+
+                <button class="lead-form__button lead-form__button--primary"
+                    type="submit">
+                    Submit Lead
+                    <span class="lead-form__button-arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+
+            <p class="lead-form__footer">
+                <span class="lead-form__footer-mark" aria-hidden="true">✓</span>
+                Please review your information before submitting.
+            </p>
+
+        </form>
+    </main>
+
+</body>
+</html>
